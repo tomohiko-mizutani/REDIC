@@ -1,0 +1,20 @@
+# CPLEX MEX Makefile (Linux)
+
+MATLABROOT = /usr/local/MATLAB/R2024b
+CPLEXROOT  = /opt/ibm/ILOG/CPLEX_Studio2212
+
+MEX = $(MATLABROOT)/bin/mex
+
+INCLUDE = -I$(CPLEXROOT)/cplex/include
+LIBS    = $(CPLEXROOT)/cplex/lib/x86-64_linux/static_pic/libcplex.a -lm -lpthread -ldl
+
+SRC    = cplexlp_mex.c
+TARGET = cplexlp_mex.mexa64
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(MEX) $(INCLUDE) $(SRC) $(LIBS)
+
+clean:
+	rm -f *.o *.mexa64

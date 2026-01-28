@@ -1,0 +1,20 @@
+# CPLEX MEX Makefile (macOS)
+
+MATLABROOT = /Applications/MATLAB_R2024b.app
+CPLEXROOT  = /Applications/CPLEX_Studio2211
+
+MEX = $(MATLABROOT)/bin/mex
+
+INCLUDE = -I$(CPLEXROOT)/cplex/include
+LIBS    = -L$(CPLEXROOT)/cplex/lib/arm64_osx/static_pic -lcplex
+
+SRC    = cplexlp_mex.c
+TARGET = cplexlp_mex.mexmaca64
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(MEX) $(INCLUDE) $(SRC) $(LIBS)
+
+clean:
+	rm -f *.o *.mexmaca64
