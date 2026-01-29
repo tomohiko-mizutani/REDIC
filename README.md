@@ -2,7 +2,7 @@
 
 This repository contains MATLAB code for the REDIC methods introduced in the following paper:
 
-*Hyperspectral Image Data Reduction for Endmember Extraction*, arXiv:2512.10506.
+Hyperspectral Image Data Reduction for Endmember Extraction, arXiv:2512.10506.
 [https://arxiv.org/abs/2512.10506](https://arxiv.org/abs/2512.10506)
 
 ## Requirements
