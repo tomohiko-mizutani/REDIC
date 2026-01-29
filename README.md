@@ -42,7 +42,7 @@ Due to file size limitations on GitHub, this repository does not include the dat
 To run the code, please visit the following [Dropbox link](https://www.dropbox.com/scl/fi/h1hnkgrx9triusj3bmyi1/data.zip?rlkey=aj9r3plpnyzb3p7ood8yjj1wt&st=u9a1l3k0&dl=0) and download `data.zip`.
 
 Extract `data.zip` to create the `data` directory.
-Place the `data` directory at the same level as the `rediclib` and `scripts` directories.
+Place the `data` directory at the same level as the `eehtlib`, `rediclib` and `scripts` directories.
 
 
 ## Quick Start
@@ -70,7 +70,7 @@ The script displays plots of the following quantities:
 For details on the MRSA distance and reconstruction error,
 refer to Section 5.2 of the arXiv paper.
 
-### Setting Parameter Values
+#### Setting Parameter Values
 
 You can specify the DRS parameters by setting the fields of the structure variable `opts` in the script, for example, `opts.numPartitions = 10`.
 The details of these parameters are described in [Parameters in DRS](#parameters-in-drs).
@@ -92,7 +92,7 @@ The script displays plots of the following quantities:
 - MRSA values for each endmember signatures and their mean
 - Elapsed time
 
-### Setting Parameter Values
+#### Setting Parameter Values
 
 You can specify the REDIC parameters by setting the fields of the structure variable `redicOpts` in the script, for example, `redicOpts.numEehtRuns = 5` and `redicOpts.augSetSize = 250`.
 The details of these parameters are described in [Parameters in REDIC](#parameters-in-redic).
@@ -113,7 +113,7 @@ runRedic
 The DRS parameters are specified using the structure variable `opts`, which contains the following fields:
 
 - `opts.numPartitions`:
-Specifies the number of partitions of the columns of the input matrix. The default value is `30`.
+Specifies the number of partitions $p$ of the columns of the input matrix. The default value is `30`.
 
 - `opts.seed_kmeans`:
 Specifies the random seed used for the $k$-means method. The default value is `37`.
@@ -129,7 +129,7 @@ See Section 3.2 for details. The default value is `1.0e-8`.
 The REDIC parameters are specified using the structure variable `redicOpts`, which contains the following fields:
 
 - `redicOpts.numPartitions`:
-Specifies the number of partitions of the columns of the input matrix. The default value is `30`.
+Specifies the number of partitions $p$ of the columns of the input matrix. The default value is `30`.
 
 - `redicOpts.numEehtRuns`:
 Specifies the number of runs of the LP-based method (i.e., the EEHT-C method), denoted by $\tau$.
