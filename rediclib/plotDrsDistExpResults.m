@@ -1,4 +1,4 @@
-function [] = plotDrsExpResults(inData)
+function [] = plotDrsDistExpResults(inData)
 
     switch inData
 
