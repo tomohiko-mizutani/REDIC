@@ -171,7 +171,7 @@ The experimental results can be plotted using the following scripts:
 
 | Script | Description |
 |---|---|
-| `runPlotDrsExpResults.m` | Plots the distance between the reference endmember matrix $W$ and $A(\mathcal{K} \cup \mathcal{K}_{\mathrm{add}})$ for the DRS output $\mathcal{K}$. Set `inData` to one of the following values: `dataset1`, `dataset2`, `dataset3_part1`, or `dataset3_part2`.
+| `runPlotDrsDistExpResults.m` | Plots the distance between the reference endmember matrix $W$ and $A(\mathcal{K} \cup \mathcal{K}_{\mathrm{add}})$ for the DRS output $\mathcal{K}$. Set `inData` to one of the following values: `dataset1`, `dataset2`, `dataset3_part1`, or `dataset3_part2`.
 | `runPlotDrsSetSizeExpResults.m` | Plots the number of elements in $\mathcal{K}$ obtained by DRS. Set `inData` to one of the following values: `dataset1`, `dataset2`, or `dataset3`. |
 | `runPlotDrsTimeExpResults.m` | Plots the elapsed time of DRS. Set `inData` to one of the following values: `dataset1`, `dataset2`, or `dataset3`. |
 
