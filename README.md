@@ -10,7 +10,6 @@ Hyperspectral Image Data Reduction for Endmember Extraction, arXiv:2512.10506.
 You need to install CPLEX.
 This code has been tested with CPLEX version 22.1.2.
 
-
 ## Build (MEX)
 
 This code relies on the [EEHT code](https://github.com/tomohiko-mizutani/EEHT),
@@ -43,7 +42,6 @@ To run the code, please visit the following [Dropbox link](https://www.dropbox.c
 
 Extract `data.zip` to create the `data` directory.
 Place the `data` directory at the same level as the `eehtlib`, `rediclib` and `scripts` directories.
-
 
 ## Quick Start
 
@@ -112,45 +110,26 @@ runRedic
 
 The DRS parameters are specified using the structure variable `opts`, which contains the following fields:
 
-- `opts.numPartitions`:
-Specifies the number of partitions $p$ of the columns of the input matrix. The default value is `30`.
+| Field | Description |
+|---|---|
+| `numPartitions` | Specifies the number of partitions $p$ of the columns of the input matrix. The default value is `30`. |
+| `seed_kmeans` | Specifies the random seed used for the $k$-means method. The default value is `37`. |
+| `epsilon` | Specifies the tolerance parameter $\epsilon_{\mathrm{feas}}$, which is used to check whether the $i$ th column of the input data is contained in the conical hull of the remaining columns by solving a nonnegative least-squares problem. See Section 3.2 for details. The default value is `1.0e-8`. |
 
-- `opts.seed_kmeans`:
-Specifies the random seed used for the $k$-means method. The default value is `37`.
-
-- `opts.epsilon`:
-Specifies the tolerance parameter $\epsilon_{\mathrm{feas}}$,
-which is used to check whether the $i$ th column of the input data is contained
-in the conical hull of the remaining columns by solving a nonnegative least-squares problem.
-See Section 3.2 for details. The default value is `1.0e-8`.
 
 ## Parameters in REDIC
 
 The REDIC parameters are specified using the structure variable `redicOpts`, which contains the following fields:
+| Field | Description |
+|---|---|
+| `numPartitions` | Specifies the number of partitions $p$ of the columns of the input matrix. The default value is `30`. |
+| `numEehtRuns` | Specifies the number of runs of the LP-based method (i.e., the EEHT-C method), denoted by $\tau$. The default value is `1`. |
+| `augSetSize` | Specifies the number of additional elements $\lambda$. The default value is `0`. |
+| `seed_kmeans` | Specifies the random seed used for the $k$-means method. The default value is `37`. |
+| `seed_addPts` | Specifies the random seed used for randomly selecting the $\lambda$ additional elements. The default value is `9848034`. |
+| `epsilon` | Specifies the tolerance parameter $\epsilon_{\mathrm{feas}}$, which is used to check whether the $i$ th column of the input data is contained in the conical hull of the remaining columns by solving a nonnegative least-squares problem. See Section 3.2 for details. The default value is `1.0e-8`. |
+| `displayFlag` | Set to `1` to enable output display or `0` to disable it. The default value is `0`. |
 
-- `redicOpts.numPartitions`:
-Specifies the number of partitions $p$ of the columns of the input matrix. The default value is `30`.
-
-- `redicOpts.numEehtRuns`:
-Specifies the number of runs of the LP-based method (i.e., the EEHT-C method), denoted by $\tau$.
-The default value is `1`.
-
-- `redicOpts.augSetSize`:
-Specifies the number of additional elements $\lambda$. The default value is `0`.
-
-- `redicOpts.seed_kmeans`:
-Specifies the random seed used for the $k$-means method. The default value is `37`.
-
-- `redicOpts.seed_addPts`:
-Specifies the random seed used for randomly selecting the $\lambda$ additional elements.
-The default value is `9848034`.
-
-- `redicOpts.epsilon`:
-Specifies the tolerance parameter $\epsilon_{\mathrm{feas}}$, which is used to check whether the $i$ th column of the input data is contained in the conical hull of the remaining columns by solving a nonnegative least-squares problem.
-See Section 3.2 for details. The default value is `1.0e-8`.
-
-- `redicOpts.displayFlag`:
-Set to `1` to enable output display, or `0` to disable it. The default value is `0`.
 
 ## Reproducing the Experiments
 
@@ -174,7 +153,6 @@ The experimental results can be plotted using the following scripts:
 | `runPlotDrsDistExpResults.m` | Plots the distance between the reference endmember matrix $W$ and $A(\mathcal{K} \cup \mathcal{K}_{\mathrm{add}})$ for the DRS output $\mathcal{K}$. Set `inData` to one of the following values: `dataset1`, `dataset2`, `dataset3_part1`, or `dataset3_part2`.
 | `runPlotDrsSetSizeExpResults.m` | Plots the number of elements in $\mathcal{K}$ obtained by DRS. Set `inData` to one of the following values: `dataset1`, `dataset2`, or `dataset3`. |
 | `runPlotDrsTimeExpResults.m` | Plots the elapsed time of DRS. Set `inData` to one of the following values: `dataset1`, `dataset2`, or `dataset3`. |
-
 
 #### Example Commands
 
