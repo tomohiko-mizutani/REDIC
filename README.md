@@ -162,10 +162,10 @@ Run the experiments:
 runDrsExp
 ```
 
-Plot the results for Dataset 1:
+Plot the distance results for Dataset 1:
 
 ```matlab
-runPlotDrsExpResults
+runPlotDrsDistExpResults
 ```
 
 ### 2. REDIC Performance Evaluation Experiments
