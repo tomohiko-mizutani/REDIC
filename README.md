@@ -161,11 +161,12 @@ Run the experiments:
 ```matlab
 runDrsExp
 ```
-
-Plot the distance results for Dataset 1:
+Generate all figures for Dataset 1 (set inData = `dataset1` in each script before running):
 
 ```matlab
 runPlotDrsDistExpResults
+runPlotDrsSetSizeExpResults
+runPlotDrsTimeExpResults
 ```
 
 ### 2. REDIC Performance Evaluation Experiments
